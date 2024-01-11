@@ -8,7 +8,7 @@
         <style>
             .chat-area{
                 width: 100%;
-                height: 80vh;
+                height: 5000px;
                 overflow: scroll;
                 border: 1px solid gray;
                 border-radius: 4px;
@@ -17,7 +17,6 @@
                 position: fixed;
                 width: 100%;
                 bottom: 10px;
-                border: 1px solid black;
             }
             .submit-area{
                 justify-content: center;
@@ -67,19 +66,19 @@
                 if(input === '') {return}
 
                 const question = document.createElement('div')
-                question.innerHTML = innputTExt
+                question.innerHTML = inputText
                 question.classList.add("box")
                 parentDiv.appendChild(question)
 
                 document.getElementById("input").value = ''
 
-                let res = await fetch('https://localhost:5000/chat',
+                let res = await fetch('http://localhost:5000/chat',
                 {
                     method: 'POST',
                     headers: {
                         "Content-Type": 'application/json'
                     },
-                    body: JSON.stringifly({
+                    body: JSON.stringify({
                         question: inputText
                     })
                 })
