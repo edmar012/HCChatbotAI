@@ -1,8 +1,8 @@
 from flask import Flask 
 
-app = Flask(_name_)
+app = Flask(__name__)
 
-@app.route(/)
+@app.route('/')
 def CHChatbotAI():
     return '''
     <!DOCTYPE html>
@@ -14,9 +14,8 @@ def CHChatbotAI():
         <title>Personal HealthCare Chatbot AI</title>
         <style>
             .chat-area{
-                margin: 0 auto;
-                width: 90%;
-                height: 500px;
+                width: 100%;
+                height: 80vh;
                 overflow: scroll;
                 border: 1px solid gray;
                 border-radius: 4px;
@@ -72,19 +71,19 @@ def CHChatbotAI():
                 if(input === '') {return}
 
                 const question = document.createElement('div')
-                question.innerHTML = innputTExt
+                question.innerHTML = inputText
                 question.classList.add("box")
                 parentDiv.appendChild(question)
 
                 document.getElementById("input").value = ''
 
-                let res = await fetch('https://localhost:5000/chat',
+                let res = await fetch('http://localhost:5000/chat',
                 {
                     method: 'POST',
                     headers: {
                         "Content-Type": 'application/json'
                     },
-                    body: JSON.stringifly({
+                    body: JSON.stringify({
                         question: inputText
                     })
                 })
