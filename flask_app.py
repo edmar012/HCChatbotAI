@@ -1,11 +1,4 @@
-from flask import Flask 
-
-app = Flask(__name__)
-
-@app.route('/')
-def CHChatbotAI():
-    return '''
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -100,4 +93,3 @@ def CHChatbotAI():
         </script>
     </body>
 </html> 
-'''
