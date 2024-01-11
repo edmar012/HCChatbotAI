@@ -10,7 +10,7 @@ app.listen(5000, ()=> {
 const { Configuration, OpenAIApi} = require("openai")
 
 const openai = new OpenAIApi(new Configuration({
-    apiKey: 'sk-E7dwjqZHG7FVKE9eAsQT3BlbkFJUjdTyAiYDM2QPfTQOWvP'
+    apiKey: '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'
 }))
 
 app.post('/chat', async (req, res)=>{
