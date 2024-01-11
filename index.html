@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+from flask import Flask 
+
+app = Flask(_name_)
+
+@app.route(/)
+def CHChatbotAI():
+    return '''
+    <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -7,8 +14,9 @@
         <title>Personal HealthCare Chatbot AI</title>
         <style>
             .chat-area{
-                width: 100%;
-                height: 80vh;
+                margin: 0 auto;
+                width: 90%;
+                height: 500px;
                 overflow: scroll;
                 border: 1px solid gray;
                 border-radius: 4px;
@@ -64,19 +72,19 @@
                 if(input === '') {return}
 
                 const question = document.createElement('div')
-                question.innerHTML = inputText
+                question.innerHTML = innputTExt
                 question.classList.add("box")
                 parentDiv.appendChild(question)
 
                 document.getElementById("input").value = ''
 
-                let res = await fetch('http://localhost:5000/chat',
+                let res = await fetch('https://localhost:5000/chat',
                 {
                     method: 'POST',
                     headers: {
                         "Content-Type": 'application/json'
                     },
-                    body: JSON.stringify({
+                    body: JSON.stringifly({
                         question: inputText
                     })
                 })
@@ -93,3 +101,4 @@
         </script>
     </body>
 </html> 
+'''
