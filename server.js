@@ -1,21 +1,21 @@
+const { Configuration, OpenAIApi } = require("openai")
+
 const express = require('express')
 const app = express()
 
 app.use(express.static('public'))
 
 app.listen(5000, ()=> {
-    console.log("Server is active"
-    )
+    console.log("Server is active")
 })
-const { Configuration, OpenAIApi} = require("openai")
 
 const openai = new OpenAIApi(new Configuration({
-    apiKey: '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'
+    apiKey: 'sk-E7dwjqZHG7FVKE9eAsQT3BlbkFJUjdTyAiYDM2QPfTQOWvP'
 }))
 
-app.post('/chat', async (req, res)=>{
+app.post('/chat', async (req, res)=> { 
     try {
-        const resp = await openai.creatChatCompilation({
+        const resp = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
             messages: [
                 { role: "user", content: req.body.question}
